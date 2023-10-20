@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <div class="hero">
+       <!-- <div class="navbar">-->
+        <nav>
+            <div class="logo">
+                <h1>Portfolio<span>.</span></h1>
+            </div>
+            <input type ="checkbox" id="check">
+            <label for ="check" class="icons">
+                <i class="bx bx-menu" id="menu-icon"></i>
+                <i class="bx bx-x" id="closed-icon>"></i>
+            </label>            
+            <div class="links" onclick="links()";></div>
+                <ul >
+                    <li><a href="#home" onclick="links()";>Home</a></li>
+                    <li><a href="#About Me" onclick="links()";>About Me</a></li>
+                    <li><a href="#Portfolio" onclick="links()";>Portfolio</a></li>
+                    <li><a href="#Contact" onclick="links()";>Contact Me</a></li>
+                </ul>
+         <!--</div>-->   
+        </nav>
+    </div>
+    <section id="home">
+        <h1 class="heading">HI I'M</h1>
+        <h1 class="heading">SHREYASMITA ROUT</h1>
+        <h3><strong>This is my Portfolio.<strong></h3>
+           <h3> I'm interested in <span id="multipletext"></span></h3>
+            
+        <br><br>
+    </section>
+    <section id="About Me">
+        <h1 class="heading">ABOUT ME</h1>
+        <div id="pic">
+            <h1 class="headings"></h1>
+            <img src="pxfuel (1).jpg"alt="">
+            <div id="intro">
+                <h2>SHREYASMITA ROUT</h2>
+                <P>A student pursuing Electronics and instrumentation engineering at OUTR,Bhubaneswar,
+                    with a knowledge in programming languages like c and python.Currently learning and exploring web 
+                    developement with little knowledge in html,css,js and looking forward to become a fullstack web
+                    developer.
+
+                </P>
+            </div>
+        </div>
+    </section>
+    <section id="Portfolio">
+        <h1 class="heading">PORTFOLIO</h1>
+        <div class="gallery"> 
+              <img src="Screenshot (10).png"alt="">
+              <div class="text">
+                 <h2>Dummy Project 1</h2>
+            </div>
+              <img src="Screenshot (11).png"alt="">
+              <div class="text">
+                 <h2>Dummy Project 2</h2>
+              </div>     
+        </div>    
+    </section>
+    <section id="Contact">
+        <h1 class="heading">CONACT ME</h1>
+        <form onsubmit="sendEmail(); reset(); return false;" action=""class="form">
+            <input type="text" name="name" class="input" placeholder="Enter your name" required>
+            <input type="email" name="email" class="input" id="email" placeholder="Enter your Email" required>
+            <textarea name="msg" id="msg" cols="30" rows="10"
+            placeholder="Enter your message" required></textarea>
+            <input type="submit" value="SEND" id="send">
+        </form>
+    </section>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#multipletext', {
+            strings: ['Web Development','App development','Artificial intelligence','Machine learning'],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backdelay: 100,
+            loop: true,
+        });
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "rshreyasmita@gmail.com",
+                Password : "#*gulu@123",
+                To : 'shreyasmitarout@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "New contact form required",
+                Body : "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+        }
+    </script>
+</body>
+</html>
